@@ -12,7 +12,7 @@ ENV PATH ${PATH}:${FLUTTER_HOME}/bin:${FLUTTER_HOME}/bin/cache/dart-sdk/bin
 
 RUN git clone --branch ${FLUTTER_VERSION} https://github.com/flutter/flutter.git ${FLUTTER_HOME}
 
-RUN yes | flutter doctor --android-licenses \
+RUN HTTPS_PROXY=socks5://10.0.33.230:1080 HTTP_PROXY=socks5://10.0.33.230:1080 yes | flutter doctor --android-licenses \
     && flutter doctor \
     && flutter precache \
     && sdkmanager "--update" "--verbose" \
