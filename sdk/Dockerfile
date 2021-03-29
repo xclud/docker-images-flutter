@@ -2,7 +2,7 @@ FROM cirrusci/android-sdk:30
 
 USER root
 
-ARG flutter_version
+ARG flutter_version=master
 
 ENV FLUTTER_HOME=${HOME}/sdks/flutter \
     FLUTTER_VERSION=$flutter_version
