@@ -10,8 +10,8 @@ ENV FLUTTER_ROOT=$FLUTTER_HOME
 
 ENV PATH ${PATH}:${FLUTTER_HOME}/bin:${FLUTTER_HOME}/bin/cache/dart-sdk/bin
 
-RUN sdkmanager "--update" "--verbose" \
-    && sdkmanager "build-tools;28.0.3" "platform-tools" "platforms;android-28" "platforms;android-29" "extras;android;m2repository" "extras;google;google_play_services" "extras;google;m2repository"
+#RUN sdkmanager "--update" "--verbose" \
+#    && sdkmanager "build-tools;28.0.3" "platform-tools" "platforms;android-28" "platforms;android-29" "extras;android;m2repository" "extras;google;google_play_services" "extras;google;m2repository"
     
 RUN sdkmanager --proxy=http --proxy_host=10.0.33.231 --proxy_port=1080 "--update" "--verbose" \
     && sdkmanager --proxy=http --proxy_host=10.0.33.231 --proxy_port=1080 "build-tools;28.0.3" "platform-tools" "platforms;android-28" "platforms;android-29" "extras;android;m2repository" "extras;google;google_play_services" "extras;google;m2repository"
