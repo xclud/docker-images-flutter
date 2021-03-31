@@ -8,8 +8,8 @@ RUN flutter doctor --android-licenses \
     && flutter precache \
     && chown -R root:root ${FLUTTER_HOME}
     
-RUN mkdir -p /opt/sample
-    && cd /opt/sample
-    && flutter create .
-    && flutter build web
+RUN mkdir -p /opt/sample \
+    && cd /opt/sample \
+    && flutter create . \
+    && flutter build web \
     && ./android/gradlew build -Dhttps.proxyHost=10.0.33.230 -Dhttps.proxyPort=8118
