@@ -3,8 +3,8 @@
 set -e
 
 docker build --cache-from cirrusci/flutter:${FLUTTER_VERSION/+/-} \
-             --tag flutter/flutter:${FLUTTER_VERSION/+/-} \
-             --tag flutter/flutter:$DOCKER_TAG \
+             --tag flutter/android-sdk:${FLUTTER_VERSION/+/-} \
+             --tag flutter/android-sdk:$DOCKER_TAG \
              --build-arg flutter_version=$FLUTTER_VERSION \
              sdk
 #docker build --cache-from cirrusci/flutter:${FLUTTER_VERSION/+/-}-web \
