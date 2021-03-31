@@ -1,7 +1,15 @@
 FROM flutter/android-sdk
 
-RUN HTTPS_PROXY=socks5://10.0.33.230:9050 HTTP_PROXY=socks5://10.0.33.230:9050 yes | flutter doctor --android-licenses \
-    && HTTPS_PROXY=socks5://10.0.33.230:9050 HTTP_PROXY=socks5://10.0.33.230:9050 flutter doctor \
-    && HTTPS_PROXY=socks5://10.0.33.230:9050 HTTP_PROXY=socks5://10.0.33.230:9050 flutter precache \
+ENV HTTPS_PROXY http://10.0.33.230:8118
+ENV HTTP_PROXY http://10.0.33.230:8118
+
+RUN flutter doctor --android-licenses \
+    && flutter doctor \
+    && flutter precache \
     && chown -R root:root ${FLUTTER_HOME}
     
+RUN mkdir -p /opt/sample
+    && cd /opt/sample
+    && flutter create .
+    && flutter build web
+    && ./android/gradlew build -Dhttps.proxyHost=10.0.33.230 -Dhttps.proxyPort=8118
