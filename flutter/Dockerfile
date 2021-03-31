@@ -12,5 +12,5 @@ RUN mkdir -p /opt/sample \
     && cd /opt/sample \
     && flutter create . \
     && flutter build web \
-    $$ cd android
+    $$ cd android \
     && ./gradlew build -Dhttps.proxyHost=10.0.33.230 -Dhttps.proxyPort=8118
