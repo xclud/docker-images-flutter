@@ -21,3 +21,5 @@ RUN export HTTPS_PROXY=http://10.0.33.230:8118 \
     && ./gradlew build -Dhttps.proxyHost=10.0.33.230 -Dhttps.proxyPort=8118 \
     && flutter build apk \
     && rm -r /opt/sample
+
+ENV PATH ${PATH}:${HOME}/.pub-cache/bin
