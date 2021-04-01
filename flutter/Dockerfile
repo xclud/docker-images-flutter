@@ -26,7 +26,7 @@ ENV PATH ${PATH}:/root/.pub-cache/bin
 
 RUN export HTTPS_PROXY=http://10.0.33.230:8118 \
     && export HTTP_PROXY=http://10.0.33.230:8118 \
-    && cat >>/opt/sample/pubspec.yaml<<EOF
+    && cat >>/opt/sample/pubspec.yaml<<EOF \
 name: sample
 description: A new Flutter application.
 publish_to: 'none'
