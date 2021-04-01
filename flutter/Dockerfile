@@ -21,8 +21,6 @@ RUN export HTTPS_PROXY=http://10.0.33.230:8118 \
     && flutter build web \
     && cd android \
     && chmod +x gradlew \
-    && set -o pipefail \
-    && ./gradlew build -Dhttps.proxyHost=10.0.33.230 -Dhttps.proxyPort=8118 \
-    && set +o pipefail \
+    && ./gradlew build -Dhttps.proxyHost=10.0.33.230 -Dhttps.proxyPort=8118 || true \
     && flutter build apk \
     && rm -r /opt/sample
