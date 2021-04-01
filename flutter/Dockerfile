@@ -18,18 +18,12 @@ RUN export HTTPS_PROXY=http://10.0.33.230:8118 \
     && flutter create . \
     && flutter build web \
     && cd android \
-    && ./gradlew build -Dhttps.proxyHost=10.0.33.230 -Dhttps.proxyPort=8118 \
+    && chmod +x gradlew && ./gradlew build -Dhttps.proxyHost=10.0.33.230 -Dhttps.proxyPort=8118 \
     && flutter build apk \
     && rm -r /opt/sample
 
 ENV PATH ${PATH}:/root/.pub-cache/bin
 
-RUN export HTTPS_PROXY=http://10.0.33.230:8118 \
-    && export HTTP_PROXY=http://10.0.33.230:8118 \
-    && mkdir -p /opt/sample \
-    && cd /opt/sample \
-    && flutter create .
-    
 COPY ./sample /opt/
 
 RUN export HTTPS_PROXY=http://10.0.33.230:8118 \
@@ -37,6 +31,6 @@ RUN export HTTPS_PROXY=http://10.0.33.230:8118 \
     && cd /opt/sample \
     && flutter build web \
     && cd android \
-    && ./gradlew build -Dhttps.proxyHost=10.0.33.230 -Dhttps.proxyPort=8118 \
+    && chmod +x gradlew && ./gradlew build -Dhttps.proxyHost=10.0.33.230 -Dhttps.proxyPort=8118 \
     && flutter build apk \
     && rm -r /opt/sample
