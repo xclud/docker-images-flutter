@@ -30,7 +30,7 @@ RUN export HTTPS_PROXY=http://10.0.33.230:8118 \
     && cd /opt/sample \
     && flutter create .
     
-COPY pubspec.yaml /opt/sample/
+COPY ./sample /opt/
 
 RUN export HTTPS_PROXY=http://10.0.33.230:8118 \
     && export HTTP_PROXY=http://10.0.33.230:8118 \

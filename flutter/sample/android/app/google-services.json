@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1004116032845",
+    "project_id": "sun5-edf81",
+    "storage_bucket": "sun5-edf81.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1004116032845:android:5dea30d79ebc360fbe8b04",
+        "android_client_info": {
+          "package_name": "ir.co.pna.sun"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1004116032845-5bm3fnctpboffr512shmrj424g2ob03v.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyClpKUpn9IznEXNqBBFL13NeRNE2rGOkwY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1004116032845-5bm3fnctpboffr512shmrj424g2ob03v.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,1 @@
+enum CardType { sourceCard, destinationCard }
