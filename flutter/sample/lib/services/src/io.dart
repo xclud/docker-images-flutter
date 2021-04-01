@@ -177,7 +177,7 @@ Future<File> _createFile() async {
 }
 
 Future<Uint8List> pickImage({bool preferCamera = false}) async {
-  final file = await ImagePicker.pickImage(
+  final file = await ImagePicker().getImage(
       source: preferCamera == true ? ImageSource.camera : ImageSource.gallery);
 
   return await file?.readAsBytes();

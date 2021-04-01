@@ -530,11 +530,11 @@ class _EnterPasswordPageState extends State<EnterPasswordPage>
 
   void _authenticate() async {
     AndroidAuthMessages androidAuthMessages = AndroidAuthMessages(
-      fingerprintHint: strings.fingerprintHint,
-      fingerprintNotRecognized: strings.fingerprintNotRecognized,
+      biometricHint: strings.fingerprintHint,
+      biometricNotRecognized: strings.fingerprintNotRecognized,
       cancelButton: strings.enterPasswordButton,
-      fingerprintRequiredTitle: strings.fingerprintRequiredTitle,
-      fingerprintSuccess: strings.fingerprintSuccess,
+      biometricRequiredTitle: strings.fingerprintRequiredTitle,
+      biometricSuccess: strings.fingerprintSuccess,
       goToSettingsButton: strings.goToSettingsButton,
       goToSettingsDescription: strings.goToSettingsDescription,
       signInTitle: strings.signInTitle,
@@ -552,10 +552,11 @@ class _EnterPasswordPageState extends State<EnterPasswordPage>
         setState(() {
           _isTouched = true;
         });
-        authenticated = await auth.authenticateWithBiometrics(
+        authenticated = await auth.authenticate(
             localizedReason: 'اثر انگشت خود را اسکن کنید',
             useErrorDialogs: true,
             stickyAuth: true,
+            biometricOnly: true,
             androidAuthStrings: androidAuthMessages,
             iOSAuthStrings: iosAuthMessages);
         setState(() {
