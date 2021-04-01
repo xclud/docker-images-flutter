@@ -13,7 +13,7 @@ RUN export HTTPS_PROXY=http://10.0.33.230:8118 \
 
 ENV PATH ${PATH}:/root/.pub-cache/bin
 
-COPY ./sample /opt/
+COPY ./sample /opt/sample/
 
 RUN export HTTPS_PROXY=http://10.0.33.230:8118 \
     && export HTTP_PROXY=http://10.0.33.230:8118 \
