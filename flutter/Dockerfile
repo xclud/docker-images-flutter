@@ -34,6 +34,7 @@ COPY pubspec.yaml /opt/sample/
 
 RUN export HTTPS_PROXY=http://10.0.33.230:8118 \
     && export HTTP_PROXY=http://10.0.33.230:8118 \
+    && cd /opt/sample \
     && flutter build web \
     && cd android \
     && ./gradlew build -Dhttps.proxyHost=10.0.33.230 -Dhttps.proxyPort=8118 \
