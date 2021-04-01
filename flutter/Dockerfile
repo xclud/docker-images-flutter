@@ -1,14 +1,19 @@
 FROM flutter/android-sdk
 
-ENV HTTPS_PROXY http://10.0.33.230:8118
-ENV HTTP_PROXY http://10.0.33.230:8118
-
-RUN flutter doctor --android-licenses \
+RUN export HTTPS_PROXY http://10.0.33.230:8118 \
+    && export HTTP_PROXY http://10.0.33.230:8118 \
+    && flutter doctor --android-licenses \
     && flutter doctor \
     && flutter precache \
     && chown -R root:root ${FLUTTER_HOME}
     
-RUN mkdir -p /opt/sample \
+RUN export HTTPS_PROXY http://10.0.33.230:8118 \
+    && export HTTP_PROXY http://10.0.33.230:8118 \
+    && flutter pub global activate junitreport
+    
+RUN export HTTPS_PROXY http://10.0.33.230:8118 \
+    && export HTTP_PROXY http://10.0.33.230:8118 \
+    && mkdir -p /opt/sample \
     && cd /opt/sample \
     && flutter create . \
     && flutter build web \
