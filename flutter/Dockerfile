@@ -1,7 +1,7 @@
 FROM docker.pna.co.ir/flutter/android-sdk
 
-ARG PROXY_SERVER=192.168.18.18
-ARG PROXY_PORT=1080
+ARG PROXY_SERVER=10.0.33.230
+ARG PROXY_PORT=9050
 
 ENV FLUTTER_HOME=${HOME}/sdks/flutter \
     FLUTTER_VERSION=$flutter_version
